@@ -1,16 +1,114 @@
 ---
-
+import BannerLeft from '../components/BannerLeft.astro';
+import BannerRight from '../components/BannerRight.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import '../styles/global.css';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <title>Baito - Work schedule & pay tracker</title>
+    <meta name="description" content="Track your shifts and income easily with My Baito." />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Hero />
+	<section class="py-20 lg:py-28 bg-gradient-to-br from-[#33bfbf] via-[#2ba8a8] to-[#239090]">
+		<div class="container mx-auto px-6">
+		  
+		  <!-- Section Header -->
+		  <div class="text-center mb-16 lg:mb-20">
+			<h2 class="text-3xl lg:text-5xl font-bold text-white mb-4">
+			  How it works
+			</h2>
+			<p class="text-xl text-white/80 max-w-2xl mx-auto">
+			  Manage your shifts and take control of your income in just a few simple steps
+			</p>
+		  </div>
+		  
+		  <!-- Features Grid -->
+		  <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
+			
+			<!-- Feature 1 -->
+			<div class="text-center group">
+			  <div class="icon mb-6 flex justify-center">
+				<div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
+				  <img loading="lazy" src="/images/icons/camera.svg" alt="Add Shifts" class="w-full h-full opacity-80" />
+				</div>
+			  </div>
+			  <div class="space-y-3">
+				<span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 1</span>
+				<h3 class="font-bold text-2xl mb-3 text-white">Add Your Jobs & Shifts</h3>
+				<p class="text-white/90 text-lg leading-relaxed">
+					Add multiple jobs and shifts manually, or let Baito Pro import them instantly from a screenshot.
+				</p>
+			  </div>
+			</div>
+			
+			<!-- Feature 2 -->
+			<div class="text-center group">
+			  <div class="icon mb-6 flex justify-center">
+				<div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
+				  <img loading="lazy" src="/images/icons/magnifying.svg" alt="Review Shifts" class="w-full h-full opacity-80" />
+				</div>
+			  </div>
+			  <div class="space-y-3">
+				<span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 2</span>
+				<h3 class="font-bold text-2xl mb-3 text-white">Review & Organize</h3>
+				<p class="text-white/90 text-lg leading-relaxed">
+				  Check your shifts, make adjustments, and view them in a calendar or list format.
+				</p>
+			  </div>
+			</div>
+			
+			<!-- Feature 3 -->
+			<div class="text-center group">
+			  <div class="icon mb-6 flex justify-center">
+				<div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
+				  <img loading="lazy" src="/images/icons/money.svg" alt="Pay Estimate" class="w-full h-full opacity-80" />
+				</div>
+			  </div>
+			  <div class="space-y-3">
+				<span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 3</span>
+				<h3 class="font-bold text-2xl mb-3 text-white">Track Your Earnings</h3>
+				<p class="text-white/90 text-lg leading-relaxed">
+				  See your projected income and other useful data instantly to plan ahead.
+				</p>
+			  </div>
+			</div>
+			
+		  </div>
+		  
+		</div>
+	  </section>
+	  <BannerRight 
+		title="Visualize Your Work Schedule with Ease" 
+		subtitle="Easily view all your shifts in a clean, organized calendar. Tap any day to instantly see time, job and earnings for that day. No more digging through notes or guessing how much you made. Stay on top of your schedule and income at a glance."
+		imgUrl='/images/mockups/calendar-iphone-16.png'
+		/>
+
+		<BannerLeft 
+		title="Light or Dark, Always Organized" 
+		subtitle="Scroll through past and upcoming shifts, with pay per shift and job type always visible. Filter by shift type and period easily and track shifts your way with full support for light and dark mode." 
+		isDarkMode 
+		imgUrl='/images/mockups/shift-list-dark-iphone-16.png'
+		/>
+
+		<BannerRight 
+		title="Keep All Your Jobs in One Place" 
+		subtitle="Juggle multiple jobs without losing track. View all your workplaces in one place, each with its own hourly rate, color code. Whether you&apos;re working one job or five, everything stays organized so you always know where your time (and money) is going."
+		imgUrl='/images/mockups/joblist-iphone-16.png'
+		/>
+
+		<BannerLeft 
+		title="Automatic Shift Import" 
+		subtitle="Just upload a screenshot and Baito Pro&apos;s AI will detect and import all your shifts automatically. Save time, skip the typing. Paid feature."
+		imgUrl='/images/mockups/import-iphone-16.png'
+		/>
+
+		<Footer />
+  </body>
 </html>

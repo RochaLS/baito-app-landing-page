@@ -1,0 +1,28 @@
+---
+
+export interface Props {
+ imgUrl: string;
+}
+
+const { imgUrl } = Astro.props as Props;
+
+const mockupImages: string[] = [
+  "/images/mockups/home-iphone-16.png",
+  "/images/mockups/calendar-iphone-16.png",
+  "/images/mockups/shift-list-dark-iphone-16",
+  "/images/mockups/joblist-iphone-16.png",
+"/images/mockups/import-iphone-16.png"
+];
+---
+
+<div class="relative">
+    <img 
+      src={imgUrl} 
+      alt="Baito app interface showing shift tracking and income prediction" 
+      class="w-full max-w-[350px] lg:max-w-[400px] drop-shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
+    />
+    
+    <!-- Optional: Decorative elements -->
+    <div class="absolute -z-10 top-8 left-8 w-72 h-72 bg-[#33BFBF]/20 rounded-full blur-3xl"></div>
+    <div class="absolute -z-10 bottom-8 right-8 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl"></div>
+  </div>

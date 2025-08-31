@@ -1,0 +1,55 @@
+---
+
+import Mockup from './Mockup.astro';
+
+export interface Props {
+  title: string;
+  subtitle?: string;
+  isDarkMode?: boolean; // true = dark banner, false = light
+  imgUrl: string;
+}
+
+const { title, subtitle, isDarkMode = false, imgUrl } = Astro.props as Props;
+
+// Tailwind-friendly backgrounds
+const bgClass = isDarkMode
+  ? "bg-[#33bfbf]"
+  : "bg-gray-100";
+
+// Conditional text colors
+const headlineClass = isDarkMode ? "text-white" : "text-[#33bfbf]";
+const subtitleClass = isDarkMode ? "text-gray-100" : "text-gray-600";
+---
+
+<!-- Full-width background section -->
+<section class={`py-16 lg:py-24 ${bgClass}`}>
+  <!-- Constrained content inside -->
+  <div class="container mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-8 lg:space-y-12 order-1">
+
+        <!-- Headline  -->
+        <div class="space-y-2">
+          <h2 class={`text-5xl sm:text-6xl lg:text-6xl font-bold leading-[0.9] tracking-tight ${headlineClass}`}>
+            {title}
+          </h2>
+        </div>
+        
+        <!-- Subtitle -->
+        <div class="max-w-lg mx-auto lg:mx-0">
+          <p class={`text-lg lg:text-xl leading-relaxed ${subtitleClass}`}>
+            {subtitle}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Right Content - Phone mockup -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-start order-2">
+          <Mockup imgUrl={imgUrl} />
+      </div>
+      
+    </div>
+  </div>
+</section>
