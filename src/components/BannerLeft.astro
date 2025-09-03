@@ -1,25 +1,22 @@
 ---
 
+import Button from './Button.astro';
 import Mockup from './Mockup.astro';
 
 export interface Props {
   title: string;
   subtitle?: string;
-  isDarkMode?: boolean; // true = dark banner, false = light
   imgUrl: string;
   imgAlt: string;
+  bgClass: string;
+  headlineClass: string;
+  subtitleClass: string;
+  visibilityClass: string;
 }
 
-const { title, subtitle, isDarkMode = false, imgUrl, imgAlt } = Astro.props as Props;
+const { title, subtitle, imgUrl, imgAlt, bgClass, headlineClass, subtitleClass, visibilityClass} = Astro.props as Props;
 
-// Tailwind-friendly backgrounds
-const bgClass = isDarkMode
-  ? "bg-[#33bfbf]"
-  : "bg-white";
 
-// Conditional text colors
-const headlineClass = isDarkMode ? "text-white" : "text-[#33bfbf]";
-const subtitleClass = isDarkMode ? "text-gray-100" : "text-gray-600";
 ---
 
 <!-- Full-width background section -->
@@ -44,6 +41,8 @@ const subtitleClass = isDarkMode ? "text-gray-100" : "text-gray-600";
             {subtitle}
           </p>
         </div>
+
+        <Button text="Try It Now" visibility={visibilityClass} />
       </div>
       
       <!-- Right Content - Phone mockup -->

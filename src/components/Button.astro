@@ -1,11 +1,16 @@
 ---
+export interface Props {
+    text: string;
+    visibility: string;
+}
 
+const {text, visibility} = Astro.props as Props;
 ---
 
-<div class="flex justify-center lg:justify-start pt-4">
+<div class=`flex justify-center lg:justify-start pt-4 ${visibility}`>
     <a href="https://apps.apple.com/us/app/baito/id6744564274" target="_blank">
         <button class="bg-[#6944F0] hover:bg-[#5A3BC7] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-xl cursor-pointer">
-        Download on the App Store
+        {text}
         </button>
     </a>
-  </div>
+</div>

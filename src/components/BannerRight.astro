@@ -7,18 +7,21 @@ export interface Props {
   isDarkMode?: boolean; // true = dark banner, false = light
   imgUrl: string;
   imgAlt: string;
+  bgClass: string;
+  headlineClass: string;
+  subtitleClass: string;
 }
 
-const { title, subtitle, isDarkMode = false, imgUrl, imgAlt } = Astro.props as Props;
+const { title, subtitle, isDarkMode = false, imgUrl, imgAlt, bgClass, headlineClass, subtitleClass } = Astro.props as Props;
 
 // Tailwind-friendly backgrounds
-const bgClass = isDarkMode
-  ? "bg-[#33bfbf]"
-  : "bg-white";
+// const bgClass = isDarkMode
+//   ? "bg-[#33bfbf]"
+//   : "bg-white";
 
 // Conditional text colors
-const headlineClass = isDarkMode ? "text-white" : "text-[#33bfbf]";
-const subtitleClass = isDarkMode ? "text-white/90" : "text-gray-600";
+// const headlineClass = isDarkMode ? "text-white" : "text-[#33bfbf]";
+// const subtitleClass = isDarkMode ? "text-white/90" : "text-gray-600";
 ---
 
 <!-- Full-width background section -->
