@@ -7,13 +7,6 @@ export interface Props {
 
 const { imgUrl, imgAlt } = Astro.props as Props;
 
-const mockupImages: string[] = [
-  "/images/mockups/home-iphone-16.png",
-  "/images/mockups/calendar-iphone-16.png",
-  "/images/mockups/shift-list-dark-iphone-16",
-  "/images/mockups/joblist-iphone-16.png",
-"/images/mockups/import-iphone-16.png"
-];
 ---
 
 <div class="relative">
@@ -21,6 +14,7 @@ const mockupImages: string[] = [
       src={imgUrl} 
       alt={imgAlt}
       class="w-full max-w-[350px] lg:max-w-[400px] drop-shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
+      width="400" height="813"
     />
     
     <!-- Optional: Decorative elements -->
