@@ -1,5 +1,5 @@
 ---
-
+import { Image } from 'astro:assets';
 export interface Props {
  imgUrl: string;
  imgAlt: string;
@@ -11,13 +11,14 @@ const { imgUrl, imgAlt, fetchPriority } = Astro.props as Props;
 ---
 
 <div class="relative">
-    <img 
-      src={imgUrl} 
-      alt={imgAlt}
-      class="w-full max-w-[350px] lg:max-w-[400px] drop-shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
-      width="400" height="813"
-      fetchpriority={fetchPriority}
-    />
+    <Image 
+    src={imgUrl} 
+    alt={imgAlt}
+    class="w-full max-w-[350px] lg:max-w-[400px] drop-shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
+    width={400} 
+    height={813}
+    fetchpriority={fetchPriority}
+  />
     
     <!-- Optional: Decorative elements -->
     <div class="absolute -z-10 top-8 left-8 w-72 h-72 bg-[#33BFBF]/20 rounded-full blur-3xl"></div>
