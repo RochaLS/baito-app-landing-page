@@ -5,8 +5,8 @@
 <footer class="bg-gradient-to-br from-[#33bfbf] via-[#2ba8a8] to-[#239090] text-white py-8 lg:py-10">
     <div class="container mx-auto flex flex-col items-center gap-4 lg:gap-6 px-4 max-w-screen-xl">
       <!-- App Store Button -->
-        <a href="https://apps.apple.com/us/app/baito/id6744564274" target="_blank">
-            <img src="/images/app-store-btn.svg" alt="Download on App Store" class="mb-2 lg:mb-4 w-36 lg:w-48"  loading="lazy">
+        <a href="https://apps.apple.com/us/app/baito/id6744564274" target="_blank" rel="noopener">
+            <img src="/images/app-store-btn.svg" alt="Download Baito on App Store" class="mb-2 lg:mb-4 w-36 lg:w-48" loading="lazy">
         </a>
   
       <!-- Footer tagline -->
@@ -16,15 +16,39 @@
   
       <!-- Icons -->
       <div class="flex gap-4 lg:gap-6 mt-4 lg:mt-6">
-        <a href="mailto:contact@baito.app">
+        <a href="mailto:contact@baito.app" aria-label="Contact Baito support">
             <div class="w-12 h-12 lg:w-20 lg:h-20 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center p-3 lg:p-4 shadow-xl hover:shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer">
-            <img loading="lazy" src="/images/icons/envelope.svg" alt="Contact" class="w-6 h-6 lg:w-8 lg:h-8 opacity-80" />
+            <img loading="lazy" src="/images/icons/envelope.svg" alt="Email contact icon" class="w-8 h-8 lg:w-16 lg:h-16 opacity-80" />
             </div>
         </a>
-        <a href="https://www.instagram.com/baito.app" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/baito.app" target="_blank" rel="noopener noreferrer" aria-label="Follow Baito on Instagram">
             <div class="w-12 h-12 lg:w-20 lg:h-20 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center p-3 lg:p-4 shadow-xl hover:shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer">
-            <img loading="lazy" src="/images/icons/insta.svg" alt="Instagram" class="w-6 h-6 lg:w-8 lg:h-8 opacity-80" />
+            <img loading="lazy" src="/images/icons/insta.svg" alt="Instagram icon" class="w-8 h-8 lg:w-16 lg:h-16 opacity-80" />
             </div>
+        </a>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="flex flex-wrap justify-center gap-6 lg:gap-8 mt-6 lg:mt-8 text-sm lg:text-base">
+        <a href="/privacy-policy" 
+           target="_blank" 
+           rel="noopener" 
+           class="text-white/90 hover:text-white transition-colors duration-200">
+          Privacy Policy
+        </a>
+        <span class="text-white/60">•</span>
+        <a href="/tos" 
+           target="_blank" 
+           rel="noopener" 
+           class="text-white/90 hover:text-white transition-colors duration-200">
+          Terms of Service
+        </a>
+        <span class="text-white/60">•</span>
+         <a href="/faq" 
+           target="_blank" 
+           rel="noopener" 
+           class="text-white/90 hover:text-white transition-colors duration-200">
+          Support
         </a>
       </div>
   

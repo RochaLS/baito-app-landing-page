@@ -1,0 +1,204 @@
+---
+
+import '../styles/global.css';
+const lastUpdated = "September 2nd, 2025";
+
+// SEO data for privacy page
+const seoData = {
+  title: "Privacy Policy - Baito App",
+  description: "Privacy policy for Baito work schedule and pay tracking app. Learn how we protect your personal information and work data.",
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{seoData.title}</title>
+    <meta name="description" content={seoData.description}>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href={new URL('/privacy', Astro.site)}>
+  </head>
+
+  <body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-[#33bfbf] mb-4">
+            Privacy Policy
+          </h1>
+          <p class="text-sm text-gray-500">
+            Last Updated: {lastUpdated}
+          </p>
+        </header>
+
+        <!-- Content -->
+        <main class="prose prose-gray max-w-none">
+          
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              1. Introduction
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              This Privacy Policy explains how Baito ('we', 'our', or 'us') collects, uses, shares, and protects your personal information when you use our Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              2. Information We Collect
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">We collect the following information:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-700">
+              <li>
+                Personal identification information: Email address, first name, password.
+              </li>
+              <li>
+                Work-related information: Shifts, job details, and hourly wage.
+              </li>
+              <li>
+                JWT: We use JSON Web Tokens (JWTs) stored securely in the user's keychain to maintain sessions and enhance the user experience. The JWT contains the user's email and a unique identifier.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              3. How We Use Your Information
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We use the information we collect in the following ways:
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-700">
+              <li>To provide and maintain our Service.</li>
+              <li>To manage your account, including verifying your identity.</li>
+              <li>To analyze usage and improve our Service.</li>
+              <li>To communicate with you, including sending updates and security alerts.</li>
+              <li>To manage in-app purchases and subscriptions through third-party services such as RevenueCat.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              4. Data Sharing and Disclosure
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We do not share your personal information with third parties except in the following circumstances:
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-700">
+              <li>With your consent.</li>
+              <li>To comply with legal obligations.</li>
+              <li>To protect and defend our rights and property.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              5. Data Security
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We implement reasonable security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Sensitive information such as passwords, hourly rates, and job titles are encrypted to ensure their protection. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. Please note that no method of transmission over the internet or method of electronic storage is 100% secure or error free.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              6. Your Data Protection Rights
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Depending on your location, you may have the following rights regarding your personal data:
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-700">
+              <li>The right to access and update your information.</li>
+              <li>The right to delete your information.</li>
+              <li>The right to object to processing or request restrictions.</li>
+              <li>The right to data portability.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              7. AI Schedule Import Functionality
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              By using the AI import schedule functionality, you acknowledge and consent that any uploaded files, including images and text, are sent to Google for processing through Google's Gemini API.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Uploaded files are used solely for extracting schedule information and are not retained by us after processing. However, Google may retain such data in accordance with their own privacy practices.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              You may opt out of using the AI functionality and instead input your schedule manually. Please review AI-generated results carefully as we are not responsible for any errors or omissions.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              For more information, please refer to 
+              <a href="https://support.google.com/gemini/answer/13594961?hl=en#your_data" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-[#33bfbf] hover:text-teal-500 underline">
+                Google Gemini's Privacy Policy
+              </a>.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              8. Third-Party Services
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We use trusted third-party services to deliver and support our app's functionality:
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-700">
+              <li>
+                <strong>RevenueCat:</strong> Used for subscription management and in-app purchase processing. RevenueCat may collect anonymous user identifiers, purchase history, and subscription status. More info: 
+                <a href="https://www.revenuecat.com/privacy" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="text-[#33bfbf] hover:text-teal-500 underline">
+                  RevenueCat Privacy Policy
+                </a>
+              </li>
+              <li>
+                <strong>Google Gemini:</strong> See Section 7 for details on how Gemini is used for AI image processing.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              9. Children's Online Privacy Protection Act (COPPA)
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Our Service is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so that we can delete such information.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              10. Changes to This Privacy Policy
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the updated version on this page. If changes are significant, we will notify you within the app or via email.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              11. Contact Us
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              If you have any questions about this Privacy Policy, please contact us at 
+              <a href="mailto:support@myarubaito.com" 
+                 class="text-[#33bfbf] hover:text-teal-500 underline">
+                contact@baito.app
+              </a>.
+            </p>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

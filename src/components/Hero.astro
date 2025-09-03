@@ -6,6 +6,15 @@ const title = "No more guessing";
 const title1 = "your paycheck.";
 const subtitle = "Juggling multiple jobs? Track your shifts, predict income, and import schedules from a screenshot with AI. Fast, smart, and made for part-timers.";
 const logo = "/images/logo.png";
+
+
+export interface Props {
+    imgAlt: string;
+}
+
+const { imgAlt } = Astro.props as Props;
+
+
 ---
 
 <section class="py-12 bg-white">
@@ -36,14 +45,14 @@ const logo = "/images/logo.png";
           </div>
           
           <!-- CTA Button -->
-          <div class="flex justify-center lg:justify-start">
+          <div class="flex justify-center lg:justify-start" >
             <Button />
           </div>
         </div>
       
         <!-- Right Content - Phone mockup -->
         <div class="lg:col-span-5 flex justify-center lg:justify-end lg:order-1 mt-10 lg:mt-0">
-          <Mockup imgUrl="/images/mockups/home-iphone-16.png" />
+          <Mockup imgUrl="/images/mockups/home-iphone-16.png" imgAlt={imgAlt} />
         </div>
         
       </div>

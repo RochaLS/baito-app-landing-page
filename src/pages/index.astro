@@ -4,111 +4,279 @@ import BannerRight from '../components/BannerRight.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import '../styles/global.css';
+// src/pages/index.astro
+export const prerender = true; // Static generation for better SEO
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentYear = new Date().getFullYear();
+
+// SEO Data
+const seoData = {
+  title: "Baito - Work Schedule & Pay Tracker App for Part-Time Workers",
+  description: "Track shifts, calculate pay, and import work schedules with AI. Baito helps part-time workers manage multiple jobs, view earnings, and stay organized. Download free.",
+  keywords: "work schedule app, shift tracker, pay calculator, part-time job tracker, work schedule planner, shift calendar, earnings tracker",
+  ogImage: "/images/baaito-og.png"
+};
+
+// Structured Data for App
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Baito",
+  "description": seoData.description,
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": ["iOS"],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Baito Free",
+      "price": "0",
+      "priceCurrency": "Cad",
+      "description": "Shift tracking and pay calculation"
+    },
+    {
+      "@type": "Offer",
+      "name": "Baito Pro Monthly",
+      "price": "5.99",
+      "priceCurrency": "CAD",
+      "eligibleDuration": "P1M",
+      "description": "AI-Powered schedule import"
+    },
+    {
+      "@type": "Offer",
+      "name": "Baito Pro Annual", 
+      "price": "59.99",
+      "priceCurrency": "CAD",
+      "eligibleDuration": "P1Y",
+      "description": "AI-Powered schedule import - Save 17%"
+    }
+  ],
+  "featureList": [
+    "Shift scheduling and tracking",
+    "Pay calculation and earnings tracking",
+    "AI-powered schedule import",
+    "Multiple job management",
+    "Calendar and list view",
+    "Dark and light mode support"
+  ]
+};
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Baito - Work schedule & Pay tracker</title>
-    <meta name="description" content="Baito helps part-time workers track shifts, calculate pay, and import work schedules using AI. Simple. Fast." />
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{seoData.title}</title>
+    <meta name="description" content={seoData.description}>
+    <meta name="keywords" content={seoData.keywords}>
+    <meta name="author" content="Baito">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL}>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:title" content={seoData.title}>
+    <meta property="og:description" content={seoData.description}>
+    <meta property="og:image" content={new URL(seoData.ogImage, Astro.site)}>
+    <meta property="og:image:alt" content="Baito app interface showing shift calendar and earnings tracker">
+    <meta property="og:site_name" content="Baito">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={canonicalURL}>
+    <meta property="twitter:title" content={seoData.title}>
+    <meta property="twitter:description" content={seoData.description}>
+    <meta property="twitter:image" content={new URL(seoData.ogImage, Astro.site)}>
+    <meta property="twitter:image:alt" content="Baito app interface showing shift calendar and earnings tracker">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    
+    <!-- Additional structured data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Baito",
+      "url": "https://baito.app",
+      "logo": "https://baito.app/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@baito.app"
+      }
+    }
+    </script>
   </head>
+
   <body>
-    <Hero />
-	<section class="py-20 lg:py-28 bg-gradient-to-br from-[#33bfbf] via-[#2ba8a8] to-[#239090]">
-		<div class="container mx-auto px-6">
-		  
-		  <!-- Section Header -->
-		  <div class="text-center mb-16 lg:mb-20">
-			<h2 class="text-3xl lg:text-5xl font-bold text-white mb-4">
-			  How it works
-			</h2>
-			<p class="text-xl text-white/80 max-w-2xl mx-auto">
-			  Manage your shifts and take control of your income in just a few simple steps
-			</p>
-		  </div>
-		  
-		  <!-- Features Grid -->
-		  <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
-			
-			<!-- Feature 1 -->
-			<div class="text-center group">
-			  <div class="icon mb-6 flex justify-center">
-				<div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
-				  <img loading="lazy" src="/images/icons/camera.svg" alt="Add Shifts" class="w-full h-full opacity-80" />
-				</div>
-			  </div>
-			  <div class="space-y-3">
-				<span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 1</span>
-				<h3 class="font-bold text-2xl mb-3 text-white">Add Your Jobs & Shifts</h3>
-				<p class="text-white/90 text-lg leading-relaxed">
-					Add multiple jobs and shifts manually, or let Baito Pro import them instantly from a screenshot.
-				</p>
-			  </div>
-			</div>
-			
-			<!-- Feature 2 -->
-			<div class="text-center group">
-			  <div class="icon mb-6 flex justify-center">
-				<div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
-				  <img loading="lazy" src="/images/icons/magnifying.svg" alt="Review Shifts" class="w-full h-full opacity-80" />
-				</div>
-			  </div>
-			  <div class="space-y-3">
-				<span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 2</span>
-				<h3 class="font-bold text-2xl mb-3 text-white">Review & Organize</h3>
-				<p class="text-white/90 text-lg leading-relaxed">
-				  Check your shifts, make adjustments, and view them in a calendar or list format.
-				</p>
-			  </div>
-			</div>
-			
-			<!-- Feature 3 -->
-			<div class="text-center group">
-			  <div class="icon mb-6 flex justify-center">
-				<div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
-				  <img loading="lazy" src="/images/icons/money.svg" alt="Pay Estimate" class="w-full h-full opacity-80" />
-				</div>
-			  </div>
-			  <div class="space-y-3">
-				<span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 3</span>
-				<h3 class="font-bold text-2xl mb-3 text-white">Track Your Earnings</h3>
-				<p class="text-white/90 text-lg leading-relaxed">
-				  See your projected income and other useful data instantly to plan ahead.
-				</p>
-			  </div>
-			</div>
-			
-		  </div>
-		  
-		</div>
-	  </section>
-	  <BannerRight 
-		title="Visualize Your Work Schedule with Ease" 
-		subtitle="Easily view all your shifts in a clean, organized calendar. Tap any day to instantly see time, job and earnings for that day. No more digging through notes or guessing how much you made. Stay on top of your schedule and income at a glance."
-		imgUrl='/images/mockups/calendar-iphone-16.png'
-		/>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
+      Skip to main content
+    </a>
 
-		<BannerLeft 
-		title="Light or Dark, Always Organized" 
-		subtitle="Scroll through past and upcoming shifts, with pay per shift and job type always visible. Filter by shift type and period easily and track shifts your way with full support for light and dark mode." 
-		isDarkMode 
-		imgUrl='/images/mockups/shift-list-dark-iphone-16.png'
-		/>
+    <header role="banner">
+      <Hero imgAlt={"Baito app income view showing total earnings on iPhone"} />
+    </header>
 
-		<BannerRight 
-		title="Keep All Your Jobs in One Place" 
-		subtitle="Juggle multiple jobs without losing track. View all your workplaces in one place, each with its own hourly rate, color code. Whether you&apos;re working one job or five, everything stays organized so you always know where your time (and money) is going."
-		imgUrl='/images/mockups/joblist-iphone-16.png'
-		/>
+    <main id="main-content" role="main">
+      <!-- How It Works Section -->
+      <section class="py-20 lg:py-28 bg-gradient-to-br from-[#33bfbf] via-[#2ba8a8] to-[#239090]" aria-labelledby="how-it-works">
+        <div class="container mx-auto px-6">
+          
+          <!-- Section Header -->
+          <div class="text-center mb-16 lg:mb-20">
+            <h2 id="how-it-works" class="text-3xl lg:text-5xl font-bold text-white mb-4">
+              How Baito Works
+            </h2>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto">
+              Manage your part-time work shifts and take control of your income in just three simple steps
+            </p>
+          </div>
+          
+          <!-- Features Grid -->
+          <div class="grid md:grid-cols-3 gap-12 lg:gap-16" role="list">
+            
+            <!-- Feature 1 -->
+            <article class="text-center group" role="listitem">
+              <div class="icon mb-6 flex justify-center">
+                <div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
+                  <img loading="lazy" src="/images/icons/camera.svg" alt="Camera icon for adding shifts" class="w-full h-full opacity-80" width="96" height="96" />
+                </div>
+              </div>
+              <div class="space-y-3">
+                <span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 1</span>
+                <h3 class="font-bold text-2xl mb-3 text-white">Add Your Jobs & Work Shifts</h3>
+                <p class="text-white/90 text-lg leading-relaxed">
+                  Add multiple part-time jobs and shifts manually, or let Baito Pro import them instantly from a work schedule screenshot using AI.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Feature 2 -->
+            <article class="text-center group" role="listitem">
+              <div class="icon mb-6 flex justify-center">
+                <div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
+                  <img loading="lazy" src="/images/icons/magnifying.svg" alt="Magnifying glass icon for reviewing shifts" class="w-full h-full opacity-80" width="96" height="96" />
+                </div>
+              </div>
+              <div class="space-y-3">
+                <span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 2</span>
+                <h3 class="font-bold text-2xl mb-3 text-white">Review & Organize Your Schedule</h3>
+                <p class="text-white/90 text-lg leading-relaxed">
+                  Check your work shifts, make adjustments, and view them in a clean calendar or organized list format.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Feature 3 -->
+            <article class="text-center group" role="listitem">
+              <div class="icon mb-6 flex justify-center">
+                <div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center p-5 shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-300 hover:rotate-3">
+                  <img loading="lazy" src="/images/icons/money.svg" alt="Money icon for tracking earnings" class="w-full h-full opacity-80" width="96" height="96" />
+                </div>
+              </div>
+              <div class="space-y-3">
+                <span class="inline-block bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">Step 3</span>
+                <h3 class="font-bold text-2xl mb-3 text-white">Track Your Part-Time Earnings</h3>
+                <p class="text-white/90 text-lg leading-relaxed">
+                  See your projected income and earnings data instantly to plan your finances and budget ahead.
+                </p>
+              </div>
+            </article>
+            
+          </div>
+          
+        </div>
+      </section>
 
-		<BannerLeft 
-		title="Automatic Shift Import" 
-		subtitle="Just upload a screenshot and Baito Pro&apos;s AI will detect and import all your shifts automatically. Save time, skip the typing. Paid feature."
-		imgUrl='/images/mockups/import-iphone-16.png'
-		/>
+      <!-- Features Sections -->
+      <section aria-label="App features">
+        <BannerRight 
+          title="Visualize Your Work Schedule with Ease" 
+          subtitle="Easily view all your part-time shifts in a clean, organized calendar. Tap any day to instantly see work time, job details and projected earnings for that day. No more digging through notes or guessing how much you made. Stay on top of your schedule and income at a glance."
+          imgUrl='/images/mockups/calendar-iphone-16.png'
+          imgAlt="Baito app calendar view showing work shifts and earnings on iPhone"
+        />
 
-		<Footer />
+        <BannerLeft 
+          title="Light or Dark Mode, Always Organized" 
+          subtitle="Scroll through past and upcoming work shifts, with pay per shift and job type always visible. Filter by shift type and time period easily. Track your part-time work your way with full support for both light and dark mode interfaces." 
+          isDarkMode 
+          imgUrl='/images/mockups/shift-list-dark-iphone-16.png'
+          imgAlt="Baito app shift list in dark mode showing organized work schedule"
+        />
+
+        <BannerRight 
+          title="Manage Multiple Jobs in One Place" 
+          subtitle="Juggle multiple part-time jobs without losing track. View all your workplaces in one organized place, each with its own hourly rate and color code. Whether you're working one job or five, everything stays organized so you always know where your time and money is going."
+          imgUrl='/images/mockups/joblist-iphone-16.png'
+          imgAlt="Baito app job list showing multiple part-time work positions"
+        />
+
+        <BannerLeft 
+          title="AI-Powered Automatic Shift Import" 
+          subtitle="Just upload a screenshot of your work schedule and Baito Pro's artificial intelligence will detect and import all your shifts automatically. Save time on data entry, skip the manual typing. Available as a premium paid feature."
+          imgUrl='/images/mockups/import-iphone-16.png'
+          imgAlt="Baito Pro AI import feature processing work schedule screenshot"
+        />
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <Footer />
+    </footer>
+
+    <!-- Schema markup for FAQ if you have one -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Baito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Baito is a work schedule and pay tracking app designed for part-time workers. It helps you track shifts, calculate earnings, and manage multiple jobs in one organized place."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "Can I import my work schedule automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Baito Pro uses AI to automatically import shifts from screenshots of your work schedule. Simply upload a photo and our AI will detect and add your shifts automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Baito work for multiple jobs?", 
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Baito is designed to help you manage multiple part-time jobs. Each job can have its own hourly rate, color code, and shift tracking."
+          }
+        }
+      ]
+    }
+    </script>
   </body>
 </html>

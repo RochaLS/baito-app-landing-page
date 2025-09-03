@@ -1,0 +1,37 @@
+# Robots.txt for Baito App
+# https://baito.app/robots.txt
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Block access to sensitive files/folders
+Disallow: /admin/
+Disallow: /.env
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /node_modules/
+
+# Block common spam/bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow Googlebot (redundant but explicit)
+User-agent: Googlebot
+Allow: /
+
+# Allow Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://baito.app/sitemap.xml
+
+# Crawl delay (prevent server overload)
+Crawl-delay: 1

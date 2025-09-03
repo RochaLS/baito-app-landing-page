@@ -1,0 +1,284 @@
+---
+import Button from '../components/Button.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!-- Top Navigation -->
+<head>
+    <meta charset="UTF-8" />
+    <title>Baito FAQ</title>
+    <meta name="description" content="Support and FAQ for Baito app" />
+  </head>
+<body>
+    <nav class="py-6 px-6 lg:px-12 bg-white shadow-md">
+        <div class="container mx-auto flex items-center justify-start">
+          <a href="/" class="inline-block">
+            <img src="/images/logo.png" alt="Baito Logo" class="h-12 w-auto" />
+          </a>
+        </div>
+      </nav>
+      
+      <!-- FAQ Section -->
+      <section class="py-20 lg:py-28 bg-white">
+        <div class="container mx-auto px-6">
+          
+          <!-- Section Header -->
+          <div class="text-center mb-20">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Support
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              If you're experiencing issues or have questions, we're here to help.
+            </p>
+          </div>
+          
+          <!-- Main Content -->
+          <div class="max-w-4xl mx-auto space-y-24">
+      
+            <!-- FAQ Questions -->
+            <div class="space-y-12">
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4 mt-8">What is Baito?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Baito is a work schedule and pay tracking app designed for part-time workers. It helps you track shifts, calculate earnings, and manage multiple jobs in one organized place.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">How do I use the AI Quick Import feature?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Go to the calendar/list page, click on Add, then on the Add Shift Page click the Quick Import Button at the top, take a screenshot of your work schedule, and upload it. Baito Pro will extract all your shifts automatically.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Is the AI feature free?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  No, AI Quick Import is a paid feature available under Baito Pro.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Why do I need to log in?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Logging in allows Baito to securely store your jobs and shifts in the cloud and keep your data persistent.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Can I add multiple jobs?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Yes! You can add multiple jobs and assign shifts to each one individually.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Can I track income per shift?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Yes. Baito shows estimated earnings per shift and for the entire month based on your hourly wage and hours worked.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Does Baito calculate taxes?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  No. The income shown is your gross pay (before deductions like taxes or CPP).
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Can I filter shifts by week or month?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Yes. You can filter your shift list by week or month to see earnings for specific time periods.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">What if my schedule changes?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  You can edit or delete any shift manually. AI-imported shifts can also be adjusted after import.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Does Baito work offline?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  No, Baito currently requires an internet connection and login to access your data.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Is there an Android version?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Not yet! We're focusing on improving the iOS version first.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Is there a web version of Baito?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  A limited web version exists but isn't connected to the iOS app yet. For now, we recommend using the iOS app for the full experience.
+                </p>
+              </div>
+      
+              <div>
+                <h4 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">Does Baito work for multiple jobs?</h4>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Absolutely! Baito is designed to help you manage multiple part-time jobs. Each job can have its own hourly rate, color code, and shift tracking.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Known Limitations -->
+            <div class="mb-24">
+              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-12">Known Limitations</h3>
+              <div class="bg-gray-50 rounded-2xl p-12 mt-4">
+                <div class="space-y-4 text-gray-600">
+                  <p>- AI import may not work with handwritten or blurry screenshots</p>
+                  <p>- Sync across devices is not yet available</p>
+                  <p>- Breaks are calculated based on Canadian law (30 minutes unpaid after 5 hours)</p>
+                  <p>- Shifts that overlap days (e.g. night shifts) may not be calculated accurately</p>
+                  <p>- Multiple shifts on the same day are not yet fully supported</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Need Help / Feedback -->
+            <div class="mb-24">
+              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 mt-4">Need Help or Feedback?</h3>
+              <p class="text-lg text-gray-600 leading-relaxed mb-2">
+                Got questions or ideas to improve Baito? Let us know:
+              </p>
+              <p class="text-lg font-semibold text-[#33bfbf]">
+                contact@baito.app
+              </p>
+            </div>
+      
+            <!-- Last Updated -->
+            <div class="text-center pt-8 border-t border-gray-200">
+              <p class="text-gray-500">
+                Last updated: September 2nd, 2025
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- JSON-LD for all FAQ questions -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Baito?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Baito is a work schedule and pay tracking app designed for part-time workers. It helps you track shifts, calculate earnings, and manage multiple jobs in one organized place."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I use the AI Quick Import feature?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Go to the calendar/list page, click on Add, then on the Add Shift Page click the Quick Import Button at the top, take a screenshot of your work schedule, and upload it. Baito Pro will extract all your shifts automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the AI feature free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, AI Quick Import is a paid feature available under Baito Pro."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do I need to log in?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Logging in allows Baito to securely store your jobs and shifts in the cloud and keep your data persistent."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I add multiple jobs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! You can add multiple jobs and assign shifts to each one individually."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I track income per shift?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Baito shows estimated earnings per shift and for the entire month based on your hourly wage and hours worked."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Baito calculate taxes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The income shown is your gross pay (before deductions like taxes or CPP)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I filter shifts by week or month?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can filter your shift list by week or month to see earnings for specific time periods."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if my schedule changes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can edit or delete any shift manually. AI-imported shifts can also be adjusted after import."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Baito work offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, Baito currently requires an internet connection and login to access your data."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there an Android version?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not yet! We're focusing on improving the iOS version first."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a web version of Baito?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A limited web version exists but isn't connected to the iOS app yet. For now, we recommend using the iOS app for the full experience."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Baito work for multiple jobs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! Baito is designed to help you manage multiple part-time jobs. Each job can have its own hourly rate, color code, and shift tracking."
+              }
+            }
+          ]
+        }
+        </script>
+        
+      </section>
+      <Footer />
+</body>
+

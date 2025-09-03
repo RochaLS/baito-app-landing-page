@@ -5,10 +5,11 @@ export interface Props {
   title: string;
   subtitle?: string;
   isDarkMode?: boolean; // true = dark banner, false = light
-  imgUrl: string
+  imgUrl: string;
+  imgAlt: string;
 }
 
-const { title, subtitle, isDarkMode = false, imgUrl } = Astro.props as Props;
+const { title, subtitle, isDarkMode = false, imgUrl, imgAlt } = Astro.props as Props;
 
 // Tailwind-friendly backgrounds
 const bgClass = isDarkMode
@@ -46,7 +47,7 @@ const subtitleClass = isDarkMode ? "text-white/90" : "text-gray-600";
       
       <!-- Right Content - Phone mockup -->
       <div class="lg:col-span-5 flex justify-center lg:justify-start lg:order-1">
-        <Mockup imgUrl={imgUrl} />
+        <Mockup imgUrl={imgUrl} imgAlt={imgAlt} />
       </div>
       
     </div>

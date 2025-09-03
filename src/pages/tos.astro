@@ -1,0 +1,195 @@
+---
+import '../styles/global.css';
+const lastUpdated = "September 2nd, 2025";
+
+// SEO data for terms page
+const seoData = {
+  title: "Terms of Service - Baito App",
+  description: "Terms of service for Baito work schedule and pay tracking app. User responsibilities, refund policy, and service terms.",
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{seoData.title}</title>
+    <meta name="description" content={seoData.description}>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href={new URL('/terms', Astro.site)}>
+  </head>
+
+  <body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-[#33bfbf] mb-4">
+            Terms of Service
+          </h1>
+          <p class="text-sm text-gray-500">
+            Last Updated: {lastUpdated}
+          </p>
+        </header>
+
+        <!-- Content -->
+        <main class="prose prose-gray max-w-none">
+          
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              1. Acceptance of Terms
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              By accessing and using Baito (the "Service"), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these Terms of Use, you are not authorized to use or access the Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              2. Description of Service
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Baito is a mobile application designed to help part-time workers predict their income. The Service provides functionalities such as managing work shifts and calculating earnings based on provided job data.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              3. User Responsibilities
+            </h2>
+            <ul class="list-disc ml-6 space-y-2 text-gray-700 mb-4">
+              <li>
+                You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.
+              </li>
+              <li>
+                You are responsible for maintaining the confidentiality of your account and password.
+              </li>
+              <li>
+                You agree not to use the Service for any illegal or unauthorized purposes.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              4. Privacy Policy
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Your use of the Service is also subject to our Privacy Policy, which covers how we collect, use, share, and store your personal information. Please review our Privacy Policy for more information.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              4.1 Refund Policy
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              All subscriptions and in-app purchases made through the Baito app are processed and managed by Apple via the App Store. As such, Baito does not handle refunds directly.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              If you would like to request a refund, please visit Apple's official support page at 
+              <a href="https://support.apple.com/en-ca/HT204084" 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="text-[#33bfbf] hover:text-teal-500 underline">
+                https://support.apple.com/en-ca/HT204084
+              </a> 
+              and follow the instructions to submit your request.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Please note that refund eligibility is determined solely by Apple, and we have no control over the outcome of such requests.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              5. AI Import Schedule Functionality
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Baito offers an AI import schedule functionality that allows users to upload files, such as images and text, to automate the process of adding work shifts to the application. By using this functionality, you acknowledge and agree that any uploaded files will be sent to Google for processing through their Gemini API.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We do not retain the uploaded files after processing, but Google may retain such data according to their privacy policy. You are responsible for reviewing the AI-generated schedules for accuracy. Baito is not liable for any errors, omissions, or inaccuracies that may occur in the AI-generated data.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              By utilizing this feature, you consent to the processing of your data by Google and agree to be bound by their privacy policy. If you do not agree to these terms, you may opt-out by manually entering your schedule data.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4 font-semibold">
+              Any misuse of the AI feature — including abusive uploads, reverse-engineering attempts, or behavior that disrupts the service — may result in immediate suspension or termination of your account at our sole discretion.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              6. Modifications to Service
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We reserve the right to modify or discontinue, temporarily or permanently, the Service (or any part thereof) with or without notice at any time.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              7. Termination
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever, including but not limited to a breach of these Terms.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              8. Governing Law
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              These Terms shall be governed and construed in accordance with the laws of Canada, without regard to its conflict of law provisions.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              9. Contact Us
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              If you have any questions about these Terms, please contact us at 
+              <a href="mailto:support@myarubaito.com" 
+                 class="text-[#33bfbf] hover:text-teal-500 underline">
+                contact@baito.app
+              </a>.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              10. Disclaimer of Warranties
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              The Service is provided on an "as is" and "as available" basis. We make no warranties, express or implied, and hereby disclaim all implied warranties including, but not limited to, merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee that the Service will be uninterrupted, secure, or error-free.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              11. Limitation of Liability
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              To the fullest extent permitted by applicable law, Baito shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of or inability to use the Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-4">
+              12. Changes to Terms
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              We may revise these Terms of Use from time to time. If a revision is material, we will provide notice within the app or by email. Continued use of the Service after any updates constitutes your acceptance of the new Terms.
+            </p>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
