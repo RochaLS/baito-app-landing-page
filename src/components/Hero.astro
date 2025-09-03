@@ -30,10 +30,10 @@ const { imgAlt } = Astro.props as Props;
           </div>
           
           <!-- Headline -->
-          <div class="space-y-2 text-left">
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[0.9] tracking-tight text-gray-900">
-              <span class="block">{title}</span>
-              <span class="block mt-2 text-[#33BFBF]">{title1}</span>
+          <div>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900">
+              <span>{title}</span>
+              <span class="text-[#33BFBF] ml-2">{title1}</span>
             </h1>
           </div>
           
@@ -46,13 +46,13 @@ const { imgAlt } = Astro.props as Props;
           
           <!-- CTA Button -->
           <div class="flex justify-center lg:justify-start" >
-            <Button visibility="visible" text="Download on the App Store"/>
+            <Button display="none" text="Download on the App Store"/>
           </div>
         </div>
       
         <!-- Right Content - Phone mockup -->
         <div class="lg:col-span-5 flex justify-center lg:justify-end lg:order-1 mt-10 lg:mt-0">
-          <Mockup imgUrl="/images/mockups/home-iphone-16.webp" imgAlt={imgAlt} />
+          <Mockup imgUrl="/images/mockups/home-iphone-16.webp" imgAlt={imgAlt} fetchPriority="high" />
         </div>
         
       </div>

@@ -35,7 +35,7 @@ const { title, subtitle, isDarkMode = false, imgUrl, imgAlt, bgClass, headlineCl
         
         <!-- Headline -->
         <div class="space-y-2">
-          <h2 class={`text-5xl sm:text-6xl lg:text-6xl font-bold leading-[0.9] tracking-tight ${headlineClass}`}>
+          <h2 class={`text-5xl sm:text-6xl lg:text-6xl font-bold tracking-tight ${headlineClass}`}>
             {title}
           </h2>
         </div>
@@ -50,7 +50,7 @@ const { title, subtitle, isDarkMode = false, imgUrl, imgAlt, bgClass, headlineCl
       
       <!-- Right Content - Phone mockup -->
       <div class="lg:col-span-5 flex justify-center lg:justify-start lg:order-1">
-        <Mockup imgUrl={imgUrl} imgAlt={imgAlt} />
+        <Mockup imgUrl={imgUrl} imgAlt={imgAlt} fetchPriority="auto" />
       </div>
       
     </div>

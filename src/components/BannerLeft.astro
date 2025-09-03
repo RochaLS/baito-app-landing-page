@@ -11,10 +11,10 @@ export interface Props {
   bgClass: string;
   headlineClass: string;
   subtitleClass: string;
-  visibilityClass: string;
+  displayClass: string;
 }
 
-const { title, subtitle, imgUrl, imgAlt, bgClass, headlineClass, subtitleClass, visibilityClass} = Astro.props as Props;
+const { title, subtitle, imgUrl, imgAlt, bgClass, headlineClass, subtitleClass, displayClass} = Astro.props as Props;
 
 
 ---
@@ -30,7 +30,7 @@ const { title, subtitle, imgUrl, imgAlt, bgClass, headlineClass, subtitleClass, 
 
         <!-- Headline  -->
         <div class="space-y-2">
-          <h2 class={`text-5xl sm:text-6xl lg:text-6xl font-bold leading-[0.9] tracking-tight ${headlineClass}`}>
+          <h2 class={`text-5xl sm:text-6xl lg:text-6xl font-bold tracking-tight ${headlineClass}`}>
             {title}
           </h2>
         </div>
@@ -42,12 +42,12 @@ const { title, subtitle, imgUrl, imgAlt, bgClass, headlineClass, subtitleClass, 
           </p>
         </div>
 
-        <Button text="Try It Now" visibility={visibilityClass} />
+        <Button text="Try It Now" display={displayClass} />
       </div>
       
       <!-- Right Content - Phone mockup -->
       <div class="lg:col-span-5 flex justify-center lg:justify-start order-2">
-          <Mockup imgUrl={imgUrl} imgAlt={imgAlt} />
+          <Mockup imgUrl={imgUrl} imgAlt={imgAlt} fetchPriority="auto" />
       </div>
       
     </div>

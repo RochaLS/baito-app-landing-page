@@ -3,9 +3,10 @@
 export interface Props {
  imgUrl: string;
  imgAlt: string;
+ fetchPriority?: "auto" | "high" | "low";
 }
 
-const { imgUrl, imgAlt } = Astro.props as Props;
+const { imgUrl, imgAlt, fetchPriority } = Astro.props as Props;
 
 ---
 
@@ -15,6 +16,7 @@ const { imgUrl, imgAlt } = Astro.props as Props;
       alt={imgAlt}
       class="w-full max-w-[350px] lg:max-w-[400px] drop-shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
       width="400" height="813"
+      fetchpriority={fetchPriority}
     />
     
     <!-- Optional: Decorative elements -->
